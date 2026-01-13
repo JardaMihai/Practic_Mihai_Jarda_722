@@ -1,13 +1,13 @@
 package org.example;
 
-import org.example.controller.AppController;
+import org.example.controller.GameController;
+import org.example.view.ConsoleView;
 
 public class Main {
     public static void main(String[] args) {
-        // In main, we only initialize and start the application controller.
-        // All business logic is handled within the MVC structure.
-        AppController appController = new AppController();
-        appController.run();
+        // The main method only initializes the components and starts the view.
+        GameController controller = new GameController();
+        ConsoleView view = new ConsoleView(controller);
+        view.run();
     }
 }
-

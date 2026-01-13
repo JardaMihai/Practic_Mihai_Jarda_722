@@ -1,14 +1,13 @@
 [
-  {"id": 1, "description": "The Reaping"},
-  {"id": 2, "description": "Chariot Parade"},
-  {"id": 3, "description": "Training Sessions"},
-  {"id": 4, "description": "Individual Assessments"},
-  {"id": 5, "description": "The Cornucopia Bloodbath"},
-  {"id": 6, "description": "Tracker Jacker Attack"},
-  {"id": 7, "description": "Wildfire Outbreak"},
-  {"id": 8, "description": "Feast at the Cornucopia"},
-  {"id": 9, "description": "Muttation Attack"},
-  {"id": 10, "description": "Cave Hideout"},
-  {"id": 11, "description": "The Final Battle"}
+  { "id": 1, "tributId": 1, "typ": "FOUND_SUPPLIES", "points": 10, "day": 1 },
+  { "id": 2, "tributId": 3, "typ": "INJURED", "points": -20, "day": 2 },
+  { "id": 3, "tributId": 9, "typ": "ATTACK", "points": 15, "day": 2 },
+  { "id": 4, "tributId": 10, "typ": "HELPED_ALLY", "points": 5, "day": 3 },
+  { "id": 5, "tributId": 1, "typ": "SPONSORED", "points": 0, "day": 3 },
+  { "id": 6, "tributId": 2, "typ": "FOUND_SUPPLIES", "points": 10, "day": 4 },
+  { "id": 7, "tributId": 5, "typ": "ATTACK", "points": 15, "day": 4 },
+  { "id": 8, "tributId": 6, "typ": "INJURED", "points": -20, "day": 5 },
+  { "id": 9, "tributId": 11, "typ": "FOUND_SUPPLIES", "points": 10, "day": 5 },
+  { "id": 10, "tributId": 15, "typ": "HELPED_ALLY", "points": 5, "day": 6 },
+  { "id": 11, "tributId": 4, "typ": "ATTACK", "points": 15, "day": 6 }
 ]
-

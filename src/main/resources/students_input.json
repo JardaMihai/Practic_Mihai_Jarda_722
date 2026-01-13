@@ -1,0 +1,28 @@
+[
+  {
+    "id": 101,
+    "name": "Mihai Jarda",
+    "courses": [
+      "Programare Orientată pe Obiecte",
+      "Structuri de Date",
+      "Baze de Date"
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Ana Vasile",
+    "courses": [
+      "Algoritmi Fundamentali",
+      "Matematică Discretă"
+    ]
+  }
+]
+
+### Cum se rulează:
+1.  Asigură-te că ai structura de directoare corectă (`src/main/java/...` și `src/main/resources/...`).
+2.  Plasează fiecare fișier în calea corespunzătoare.
+3.  Rulează metoda `main` din clasa `Main.java`.
+
+### Rezultat așteptat:
+-   **Consolă:** Programul va afișa studenții citiți din `students_input.json` și apoi un mesaj de succes pentru scriere.
+-   **Fișier nou:** Un fișier numit `students_output.json` va fi creat în directorul rădăcină al proiectului, conținând datele celor doi studenți noi (Elena și Andrei).
