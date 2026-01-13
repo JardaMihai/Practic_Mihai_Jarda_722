@@ -1,9 +1,12 @@
 package org.example.model;
 
-public enum EventTyp {
+// Numele din diagramă: EventTyp
+// Valorile corespund celor din JSON.
+public enum EventType {
     FOUND_SUPPLIES,
     INJURED,
     ATTACK,
     HELPED_ALLY,
     SPONSORED
 }
+

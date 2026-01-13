@@ -1,52 +1,61 @@
 package org.example.view;
 
 import org.example.controller.GameController;
-import org.example.model.Status;
-import org.example.model.Tribut;
+import org.example.model.Tribute;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleView {
+
     private final GameController controller;
-    private final Scanner scanner;
 
     public ConsoleView(GameController controller) {
         this.controller = controller;
-        this.scanner = new Scanner(System.in);
     }
 
-    /**
-     * Runs the console application, displaying all required exercises.
-     */
     public void run() {
         displayExercise1();
-        System.out.println("--------------------------------------------------------------");
         displayExercise2();
-        scanner.close();
+        displayExercise3();
     }
 
     private void displayExercise1() {
+        System.out.println("--- Exercise 1: Load Data ---");
         System.out.println("Tributes loaded: " + controller.getTributes().size());
         System.out.println("Events loaded: " + controller.getEvents().size());
         System.out.println("Gifts loaded: " + controller.getGifts().size());
         System.out.println();
 
         controller.getTributes().forEach(System.out::println);
+        System.out.println("\n--------------------------------\n");
     }
 
     private void displayExercise2() {
-        System.out.print("Input district: ");
-        try {
-            // Read the whole line and parse to avoid potential issues with the scanner's buffer.
-            int district = Integer.parseInt(scanner.nextLine());
-            System.out.println(); // Add a blank line for formatting, as in the example output.
+        System.out.println("--- Exercise 2: Filter by District and Status ---");
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Input district: ");
+            int district = scanner.nextInt();
+            System.out.println();
 
-            List<Tribut> filteredTributes = controller.filterTributesByDistrictAndStatus(district, Status.ALIVE);
-            filteredTributes.forEach(System.out::println);
-
-        } catch (NumberFormatException e) {
-            System.out.println("\nInvalid input. Please enter a whole number for the district.");
+            List<Tribute> filteredTributes = controller.filterTributesByDistrictAndStatus(district);
+            if (filteredTributes.isEmpty()) {
+                System.out.println("No ALIVE tributes found for district " + district);
+            } else {
+                filteredTributes.forEach(System.out::println);
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter an integer.");
         }
+        System.out.println("\n--------------------------------\n");
+    }
+
+    private void displayExercise3() {
+        System.out.println("--- Exercise 3: Sort Tributes ---");
+        List<Tribute> sortedTributes = controller.getSortedTributes();
+        sortedTributes.forEach(System.out::println);
+        System.out.println("\n--------------------------------\n");
     }
 }
+

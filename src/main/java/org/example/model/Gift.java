@@ -1,13 +1,14 @@
 package org.example.model;
 
-public class SponsorGeschenk {
+// Numele din diagramă: SponsorGeschenk
+public class Gift {
     private int id;
-    private int tributId;
+    private int tributeId;
     private String itemName;
     private int value;
     private int day;
 
-    // Getters and Setters for Jackson deserialization
+    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -16,12 +17,12 @@ public class SponsorGeschenk {
         this.id = id;
     }
 
-    public int getTributId() {
-        return tributId;
+    public int getTributeId() {
+        return tributeId;
     }
 
-    public void setTributId(int tributId) {
-        this.tributId = tributId;
+    public void setTributeId(int tributeId) {
+        this.tributeId = tributeId;
     }
 
     public String getItemName() {
@@ -48,3 +49,4 @@ public class SponsorGeschenk {
         this.day = day;
     }
 }
+

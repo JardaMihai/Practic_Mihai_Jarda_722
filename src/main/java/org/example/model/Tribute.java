@@ -1,13 +1,15 @@
 package org.example.model;
 
-public class Tribut {
+// Numele din diagramă: Tribut
+// Am folosit nume de câmpuri care corespund direct cu cheile din JSON pentru a simplifica parsarea.
+public class Tribute {
     private int id;
     private String name;
-    private int distrikt;
+    private int district; // distrikt in diagram
     private Status status;
     private int skillLevel;
 
-    // Getters and Setters for Jackson deserialization
+    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -24,12 +26,12 @@ public class Tribut {
         this.name = name;
     }
 
-    public int getDistrikt() {
-        return distrikt;
+    public int getDistrict() {
+        return district;
     }
 
-    public void setDistrikt(int distrikt) {
-        this.distrikt = distrikt;
+    public void setDistrict(int district) {
+        this.district = district;
     }
 
     public Status getStatus() {
@@ -50,7 +52,9 @@ public class Tribut {
 
     @Override
     public String toString() {
+        // Format: id | name | D<district> | status | skill=<skillLevel>
         return String.format("%d | %s | D%d | %s | skill=%d",
-                id, name, distrikt, status, skillLevel);
+                id, name, district, status, skillLevel);
     }
 }
+
