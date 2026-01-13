@@ -19,6 +19,7 @@ public class ConsoleView {
         displayExercise1();
         displayExercise2();
         displayExercise3();
+        displayExercise4();
     }
 
     private void displayExercise1() {
@@ -56,6 +57,16 @@ public class ConsoleView {
         List<Tribute> sortedTributes = controller.getSortedTributes();
         sortedTributes.forEach(System.out::println);
         System.out.println("\n--------------------------------\n");
+    }
+
+    private void displayExercise4() {
+        List<Tribute> sortedTributes = controller.getSortedTributes();
+        sortedTributes.forEach(System.out::println);
+        System.out.println();
+
+        String filename = "tributes_sorted.txt";
+        controller.writeTributesToFile(sortedTributes, filename);
+        System.out.println("Sorted list of tributes written to " + filename);
     }
 }
 

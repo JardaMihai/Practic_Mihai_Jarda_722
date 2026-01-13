@@ -6,8 +6,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Event {
     private int id;
     private int tributeId;
-    @JsonProperty("type") // Mapare explicită de la "type" (JSON) la "eventType" (Java)
-    private EventType eventType; // typ in diagram
+    @JsonProperty("type")
+    private EventType eventType;
     private int points;
     private int day;
 
