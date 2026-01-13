@@ -14,6 +14,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 public class GameController {
 
     private List<Tribute> tributes;
@@ -62,6 +63,29 @@ public class GameController {
             System.err.println("Error writing to file: " + filename);
             e.printStackTrace();
         }
+    }
+
+    public int calculateComputedPoints(Event event) {
+        int points = event.getPoints();
+        int day = event.getDay();
+        switch (event.getEventType()) {
+            case FOUND_SUPPLIES:
+                return points + 2 * day;
+            case INJURED:
+                return points - day;
+            case ATTACK:
+                return points * 2 + day;
+            case HELPED_ALLY:
+                return points + 5;
+            case SPONSORED:
+                return points + 10;
+            default:
+                return points; // Should not happen with the given data
+        }
+    }
+
+    public List<Event> getFirstFiveEvents() {
+        return events.stream().limit(5).collect(Collectors.toList());
     }
 }
 

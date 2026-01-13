@@ -1,6 +1,7 @@
 package org.example.view;
 
 import org.example.controller.GameController;
+import org.example.model.Event;
 import org.example.model.Tribute;
 
 import java.util.InputMismatchException;
@@ -20,6 +21,7 @@ public class ConsoleView {
         displayExercise2();
         displayExercise3();
         displayExercise4();
+        displayExercise5();
     }
 
     private void displayExercise1() {
@@ -67,6 +69,16 @@ public class ConsoleView {
         String filename = "tributes_sorted.txt";
         controller.writeTributesToFile(sortedTributes, filename);
         System.out.println("Sorted list of tributes written to " + filename);
+    }
+
+    private void displayExercise5() {
+        System.out.println("--- Exercise 5: Point Calculation ---");
+        List<Event> firstFiveEvents = controller.getFirstFiveEvents();
+        for (Event event : firstFiveEvents) {
+            int computedPoints = controller.calculateComputedPoints(event);
+            System.out.printf("Event %d -> rawPoints=%d -> computedPoints=%d%n",
+                    event.getId(), event.getPoints(), computedPoints);
+        }
     }
 }
 
