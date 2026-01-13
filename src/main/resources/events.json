@@ -1,0 +1,14 @@
+[
+  {"id": 1, "description": "The Reaping"},
+  {"id": 2, "description": "Chariot Parade"},
+  {"id": 3, "description": "Training Sessions"},
+  {"id": 4, "description": "Individual Assessments"},
+  {"id": 5, "description": "The Cornucopia Bloodbath"},
+  {"id": 6, "description": "Tracker Jacker Attack"},
+  {"id": 7, "description": "Wildfire Outbreak"},
+  {"id": 8, "description": "Feast at the Cornucopia"},
+  {"id": 9, "description": "Muttation Attack"},
+  {"id": 10, "description": "Cave Hideout"},
+  {"id": 11, "description": "The Final Battle"}
+]
+
